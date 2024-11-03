@@ -24,7 +24,13 @@ const meta: Meta<typeof JigsawPuzzle> = {
     onSolved: {
       description: 'Called when the puzzle is solved.',
       action: 'solved'
-    }
+    },
+    hintCount: {
+      defaultValue: 0,
+      description: 'The number of hints used. Increase to reveal hints.',
+      type: 'number',
+      control: { type: 'number' },
+    },
   }
 }
 
@@ -34,6 +40,7 @@ type Story = StoryObj<typeof JigsawPuzzle>
 
 export const Puzzle: Story = {
   args: {
-    imageSrc: 'https://images.unsplash.com/photo-1595045051853-05ef47bdfdbe?3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+    imageSrc: 'https://images.unsplash.com/photo-1595045051853-05ef47bdfdbe?3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+    hintCount: 0,
   }
 }
