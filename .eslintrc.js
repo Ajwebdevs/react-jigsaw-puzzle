@@ -16,20 +16,20 @@ module.exports = {
     ecmaVersion: 12
   },
   plugins: ['react', 'storybook', '@typescript-eslint', 'filename-rules'],
+  rules: {
+    '@typescript-eslint/no-use-before-define': 'error',
+    'filename-rules/match': [2, {
+      '.ts': 'kebab-case',
+      '.tsx': 'kebab-case'
+    }],
+    'no-console': ['error'],
+    'no-use-before-define': 'off',
+    'prefer-arrow-callback': 'error',
+    'react/prop-types': 0
+  },
   settings: {
     react: {
       version: 'detect'
     }
-  },
-  rules: {
-    'prefer-arrow-callback': 'error',
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': 'error',
-    'filename-rules/match': [2, {
-      '.tsx': 'kebab-case',
-      '.ts': 'kebab-case'
-    }],
-    'react/prop-types': 0,
-    'no-console': ['error']
   }
 }
